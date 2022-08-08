@@ -3,9 +3,9 @@ name: Lint
 on:
   push:
     branches:
-      - '**'
+      - "**"
     tags:
-      - '**'
+      - "**"
 
 jobs:
   run_lint:
