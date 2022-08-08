@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Todos {
+model Todo {
   uuid String @id @db.Uuid @default(uuid())
   owner_uuid String @db.Uuid
   state String @db.VarChar(20)
@@ -18,4 +18,6 @@ model Todos {
   description String?
 
   @@index([owner_uuid, state])
+
+  @@map("todos")
 }
