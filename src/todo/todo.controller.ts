@@ -13,8 +13,6 @@ export class TodoController {
 
   @Post()
   async createTodo(@Body() createTodoDTO: CreateTodoDTO) {
-    const todo = await this.service.createTodo(createTodoDTO);
-    console.log(todo);
-    return todo;
+    return await this.service.createTodo(createTodoDTO);
   }
 }

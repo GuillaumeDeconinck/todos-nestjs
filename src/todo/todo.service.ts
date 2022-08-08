@@ -12,6 +12,7 @@ export class TodoService {
   }
 
   createTodo(createTodoDTO: CreateTodoDTO): Promise<Todo> {
+    // TODO: check if owner exists before creating when users are implemented
     return this.prisma.todo.create({
       data: {
         owner_uuid: createTodoDTO.ownerUuid,
