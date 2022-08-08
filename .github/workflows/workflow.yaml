@@ -17,6 +17,7 @@ jobs:
       - id: install_packages
         name: Install packages
         run: |
+          npm i -g pnpm
           pnpm i --frozen-lockfile
       - name: Trunk Check
         uses: trunk-io/trunk-action@v1
