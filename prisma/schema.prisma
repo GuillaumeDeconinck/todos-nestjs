@@ -9,3 +9,13 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Todos {
+  uuid String @id @db.Uuid @default(uuid())
+  owner_uuid String @db.Uuid
+  state String @db.VarChar(20)
+  title String @db.VarChar(255)
+  description String?
+
+  @@index([owner_uuid, state])
+}
